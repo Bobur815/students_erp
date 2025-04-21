@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "id": 1,
+        "email": "eve.holt@reqres.in",
+        "password": "pistol"
+    },
+    {
+        "id": 2,
+        "email": "ergbobur@gmail.com",
+        "password": "a1662714"
+    },
+    {
+        "id": 3,
+        "email": "ergbobur@gmail.com",
+        "password": "a1662714"
+    }
+]
