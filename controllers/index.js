@@ -2,7 +2,8 @@ import fs from "fs"
 import path from "path"
 
 const GET  = (req,res) => {
-    
+    let tasks = JSON.parse(fs.readFileSync(path.join(process.cwd(),"/db/users.json"),"utf-8"))
+    res.status(200).json(tasks)
 }
 const POST  = (req,res) => {
     let newUser = req.body;

@@ -7,6 +7,6 @@ router
     .get("/api/todos",userController.GET)
     .post("/api/todos",userController.POST)
     .put("/api/todos",userController.PUT)
-    .delete("/api/users",userController.DELETE)
+    .delete("/api/users/:id",userController.DELETE)
 
 export default router
