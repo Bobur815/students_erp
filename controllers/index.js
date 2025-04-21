@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 const GET = (req, res) => {
-    res.send("get users")
+
 }
 
 const USER_POST = (req, res) => {
