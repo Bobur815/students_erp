@@ -8,8 +8,16 @@ function getStudents(req, res) {
     }
 } 
 function getStudent(req, res) {
-    const id = req.params;
-    studentMethods.getStudentById(id)
+    try {
+        const id = req.params.id;
+        const student = studentMethods.getStudentById(id);
+        if (!student) {
+          return res.status(404).json({ error: "Student not found" });
+        }
+        res.status(200).json(student);
+      } catch (error) {
+        res.status(500).json({ error: "Server error" });
+      }
 } 
 function createStudent(req, res){
     const newdata = req.body;

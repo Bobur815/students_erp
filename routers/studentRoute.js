@@ -4,8 +4,8 @@ import userController from "../controllers/studentController.js";
 let router = Router()
 
 router
-    .get("/api/students",userController.getStudents)
     .get("/api/students/:id",userController.getStudent)
+    .get("/api/students",userController.getStudents)
     .post("/api/students",userController.createStudent)
     .put("/api/students/:id",userController.updateStudent)
     .delete("/api/students/:id",userController.deleteStudent)
