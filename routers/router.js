@@ -1,13 +1,12 @@
-import { Router } from "express"
-import controller from "../controllers/index.js"
+import { Router } from "express";
+import userController from "../controllers/index.js";
 
-const router = Router()
+let router = Router()
 
 router
-    .get("/api/users", controller.GET)
-    .get("/api/register", controller.GET_R)
-    .post("/api/users", controller.USER_POST)
-    .post("/api/register", controller.REGISTER_POST)
-    .post("/api/login", controller.LOGIN_POST)
+    .get("/api/todos",userController.GET)
+    .post("/api/todos",userController.POST)
+    .put("/api/todos",userController.PUT)
+    .delete("/api/users",userController.DELETE)
 
 export default router
