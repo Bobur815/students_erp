@@ -1,6 +1,8 @@
 import studentMethods from "./studentservice.js"
 
 function getStudents(req, res) {
+
+    // Boburmirzo Ergashev
     try {
         let students = studentMethods.getAllStudents();
 
@@ -27,6 +29,8 @@ function getStudents(req, res) {
     }
 } 
 function getStudent(req, res) {
+
+    // Boburmirzo Ergashev
     try {
         const id = req.params.id;
         const student = studentMethods.getStudentById(id);
@@ -39,30 +43,29 @@ function getStudent(req, res) {
       }
 } 
 function createStudent(req, res){
+
+    // Abdurahmon
     const newdata = req.body;
     res.status(201).json(studentMethods.createStudent(newdata))
 } 
 function updateStudent(req, res){
-    const id = req.params;
+
+    // Azizbek Davronov
+   try {
+    const {id} = req.params;
     const data = req.body;
-    studentMethods.updateStudent(id,data)
+    let answer = studentMethods.updateStudent(id,data)
+    res.status(202).send(answer)
+   } catch (error) {
+        res.status(400).send(error.message)
+   }
 } 
 function deleteStudent(req, res){
-    const id = req.params;
-    
-    
-    if(studentMethods.deleteStudent(id)){
-        res.status(202).json({message: "Student successfully deleted"})
-    }
-    else{
-        if(id){
-        res.status(404).json({message: `Student with ID ${id} not found`})
-        }
-        else{
-            res.status(404).json({message: "Invalid ID"})
-        }
-    }
-    
+
+    // Muhammadyahyo
+    const {id} = req.params;
+
+    res.status(202).json(studentMethods.deleteStudent(id))
 }
 
 export default {

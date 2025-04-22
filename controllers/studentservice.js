@@ -1,7 +1,7 @@
 import fs from "fs"
 import path from "path"
 
-const students = JSON.parse(fs.readFileSync(path.join(process.cwd(),"/db/students.json"),"utf-8"))
+let students = JSON.parse(fs.readFileSync(path.join(process.cwd(),"/db/students.json"),"utf-8"))
 
 const getAllStudents  = () => {
     return students;
@@ -34,20 +34,29 @@ const createStudent  = (data) => {
 
 }
 const updateStudent = (id,data) => {
+        if(!students.some(student => student.id == id) || id < 1){
+            throw new Error("Siz bergan Id topilmadi!");
+        }
+        let student = students.find(student => student.id == id)
+        student.firstName = data.firstName ?  data.firstName : student.firstName;
+        student.lastName = data.lastName ?  data.lastName : student.lastName;
+        student.course = data.course ?  data.course : student.coursee;
+        student.faculty = data.faculty ?  data.faculty : student.faculty;
+
+        fs.writeFileSync(path.join(process.cwd(),"/db/students.json"),JSON.stringify(students,null,4));
+        return "Update 👍+"
 
 }
 const deleteStudent = (id) => {
-    if(!id) {
-        return false;
+    
+    if(id){
+        students = students.filter(student => student.id != id);
+        fs.writeFileSync("./db/students.json", JSON.stringify(students, null, 4));
+        return {message:"Student deleted successfully!"}
+    } else {
+        return {message:"xatolik bor, IDni to'g'ri tering"};
     }
 
-    try {
-        students = students.filter(student => student.id!=id)
-        fs.writeFileSync(path.join(process.cwd(),"/db/students.json"),students,null,4);
-        return true;
-    } catch (error) {
-        return error;
-    }
 }
 
 export default{
