@@ -5,7 +5,6 @@ function getStudents(req, res) {
         let students = studentMethods.getAllStudents();
 
         let {course,faculty,sort} = req.query;
-
         if(course){
             if(course > 4 || course < 1){
                 return res.status(404).json({message: "Invalid course"})
@@ -17,7 +16,7 @@ function getStudents(req, res) {
             students = students.filter(student => student.faculty.toLowerCase().includes(faculty.toLowerCase()));
         }
 
-        if (sort === "firstName" || sort === "lastName") {
+        if (sort === "firstname" || sort === "lastname") {
             students.sort((a, b) => a[sort].localeCompare(b[sort]));
           }
 

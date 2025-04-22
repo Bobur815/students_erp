@@ -1,71 +1,71 @@
 [
     {
       "id": 1,
-      "firstName": "Ali",
-      "lastName": "Karimov",
+      "firstname": "Ali",
+      "lastname": "Karimov",
       "course": 1,
       "faculty": "Dasturiy injiniring"
     },
     {
       "id": 2,
-      "firstName": "Dilnoza",
-      "lastName": "Toirova",
+      "firstname": "Dilnoza",
+      "lastname": "Toirova",
       "course": 2,
       "faculty": "Axborot xavfsizligi"
     },
     {
       "id": 3,
-      "firstName": "Jamshid",
-      "lastName": "Qodirov",
+      "firstname": "Jamshid",
+      "lastname": "Qodirov",
       "course": 3,
       "faculty": "Kiberxavfsizlik"
     },
     {
       "id": 4,
-      "firstName": "Malika",
-      "lastName": "Rustamova",
+      "firstname": "Malika",
+      "lastname": "Rustamova",
       "course": 4,
       "faculty": "Sun’iy intellekt"
     },
     {
       "id": 5,
-      "firstName": "Bekzod",
-      "lastName": "Yusupov",
+      "firstname": "Bekzod",
+      "lastname": "Yusupov",
       "course": 1,
       "faculty": "Kompyuter injiniringi"
     },
     {
       "id": 6,
-      "firstName": "Zilola",
-      "lastName": "Nazarova",
+      "firstname": "Zilola",
+      "lastname": "Nazarova",
       "course": 2,
       "faculty": "Axborot texnologiyalari"
     },
     {
       "id": 7,
-      "firstName": "Shohruh",
-      "lastName": "Abdullayev",
+      "firstname": "Shohruh",
+      "lastname": "Abdullayev",
       "course": 3,
       "faculty": "Kompyuter grafika"
     },
     {
       "id": 8,
-      "firstName": "Feruza",
-      "lastName": "Islomova",
+      "firstname": "Feruza",
+      "lastname": "Islomova",
       "course": 4,
       "faculty": "Dasturiy injiniring"
     },
     {
       "id": 9,
-      "firstName": "Nodir",
-      "lastName": "Rasulov",
+      "firstname": "Nodir",
+      "lastname": "Rasulov",
       "course": 2,
       "faculty": "Axborot xavfsizligi"
     },
     {
       "id": 10,
-      "firstName": "Diyor",
-      "lastName": "Sattorov",
+      "firstname": "Diyor",
+      "lastname": "Sattorov",
       "course": 1,
       "faculty": "Sun’iy intellekt"
     }
