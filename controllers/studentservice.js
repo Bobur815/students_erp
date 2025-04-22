@@ -15,6 +15,22 @@ const getStudentById  = (id) => {
 }
 const createStudent  = (data) => {
     
+    try {
+        const students=JSON.parse(fs.readFileSync(path.join(process.cwd(),"/db/students.json"),"utf-8"))
+
+        const newStudent={
+            id:students.length?students.at(-1).id+1:1,
+            ...data
+        }
+
+        students.push(newStudent)
+        fs.writeFileSync(path.join(process.cwd(), "/db/students.json"), JSON.stringify(students, null, 4))
+
+        return {message:"Student created successfully!", student:newStudent}
+    } catch (error) {
+        console.error(error);
+        return {message:"Error creating student", error:error.message}
+    }
 
 }
 const updateStudent = (id,data) => {
@@ -31,20 +47,19 @@ const updateStudent = (id,data) => {
         return "Update 👍+"
 
 }
-const deleteStudent = (req, res) => {
-    let id = parseInt(req.params.id); 
-    let data = JSON.parse(fs.readFileSync("./db/students.json", "utf-8"));
-    let index = data.findIndex(user => user.id === id);
-
-    if(index !== -1){
-        data.splice(index, 1);
-        fs.writeFileSync("./db/students.json", JSON.stringify(data, null, 4));
-        res.send("o'chirildi");
-    } else {
-        res.status(404).send("xatolik bor, IDni to'g'ri tering");
+const deleteStudent = (id) => {
+    if(!id) {
+        return false;
     }
-};
 
+    try {
+        students = students.filter(student => student.id!=id)
+        fs.writeFileSync(path.join(process.cwd(),"/db/students.json"),students,null,4);
+        return true;
+    } catch (error) {
+        return error;
+    }
+}
 
 export default{
     getAllStudents,

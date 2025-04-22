@@ -5,7 +5,6 @@ function getStudents(req, res) {
         let students = studentMethods.getAllStudents();
 
         let {course,faculty,sort} = req.query;
-
         if(course){
             if(course > 4 || course < 1){
                 return res.status(404).json({message: "Invalid course"})
@@ -17,7 +16,7 @@ function getStudents(req, res) {
             students = students.filter(student => student.faculty.toLowerCase().includes(faculty.toLowerCase()));
         }
 
-        if (sort === "firstName" || sort === "lastName") {
+        if (sort === "firstname" || sort === "lastname") {
             students.sort((a, b) => a[sort].localeCompare(b[sort]));
           }
 
@@ -41,7 +40,7 @@ function getStudent(req, res) {
 } 
 function createStudent(req, res){
     const newdata = req.body;
-    studentMethods.createStudent(newdata)
+    res.status(201).json(studentMethods.createStudent(newdata))
 } 
 function updateStudent(req, res){
    try {
@@ -54,8 +53,20 @@ function updateStudent(req, res){
    }
 } 
 function deleteStudent(req, res){
-    const id = req.params;
-    studentMethods.deleteStudent(id)
+    const {id} = req.params;
+    
+    if(studentMethods.deleteStudent(id)){
+        res.status(202).json({message: "Student successfully deleted"})
+    }
+    else{
+        if(id){
+        res.status(404).json({message: `Student with ID ${id} not found`})
+        }
+        else{
+            res.status(404).json({message: "Invalid ID"})
+        }
+    }
+    
 }
 
 export default {
