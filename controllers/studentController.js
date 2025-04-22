@@ -50,6 +50,7 @@ function updateStudent(req, res){
 function deleteStudent(req, res){
     const id = req.params;
     
+    
     if(studentMethods.deleteStudent(id)){
         res.status(202).json({message: "Student successfully deleted"})
     }
