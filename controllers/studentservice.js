@@ -48,9 +48,7 @@ const deleteStudent = (id) => {
     } catch (error) {
         return error;
     }
-    
-
-};
+}
 
 export default{
     getAllStudents,
