@@ -1,7 +1,8 @@
 import { Router } from "express";
 import userController from "../controllers/studentController.js";
 
-let router = Router()
+let router = Router();
+console.log(router)
 
 router
     .get("/api/students/:id",userController.getStudent)
