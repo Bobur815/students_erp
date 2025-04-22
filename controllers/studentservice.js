@@ -4,9 +4,11 @@ import path from "path"
 let students = JSON.parse(fs.readFileSync(path.join(process.cwd(),"/db/students.json"),"utf-8"))
 
 const getAllStudents  = () => {
+    // Boburmirzo Ergashev
     return students;
 }
 const getStudentById  = (id) => {
+    // Boburmirzo Ergashev
     let student = students.find(student => student.id==id)
     if(student){
         return student;
@@ -15,6 +17,7 @@ const getStudentById  = (id) => {
 }
 const createStudent  = (data) => {
     
+    // Azizbek Davronov
     try {
         const students=JSON.parse(fs.readFileSync(path.join(process.cwd(),"/db/students.json"),"utf-8"))
 
@@ -34,6 +37,8 @@ const createStudent  = (data) => {
 
 }
 const updateStudent = (id,data) => {
+
+    // Abdurahmon
         if(!students.some(student => student.id == id) || id < 1){
             throw new Error("Siz bergan Id topilmadi!");
         }
@@ -48,7 +53,8 @@ const updateStudent = (id,data) => {
 
 }
 const deleteStudent = (id) => {
-    
+
+    // Muhammadyahyo
     if(id){
         students = students.filter(student => student.id != id);
         fs.writeFileSync("./db/students.json", JSON.stringify(students, null, 4));
