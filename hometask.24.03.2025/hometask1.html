@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Original matn</h1>
+    <p id="paragraph"></p>
+    <button id="button" onclick="alert">Click button</button>
+    <ul>
+        <li id="list"></li>
+    </ul>
+    <div id="container" style="width: 150px; height: 60px;"></div>
+    <div class="box"></div>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <ul id="myList">
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+        <li>Element 5</li>
+        <input type="text" id="userInput">
+        <p id="outputText">Bu yerga matn chiqadi</p>
+        <button onclick="addParagraph()">Paragraf qo'shish</button>
+    </ul>
+    <script>
+        document.getElementById("title").textContent="Salom, dasturchi!";
+        document.getElementById("paragraph").textContent="Bu yangi paragraf";
+        let alertText=document.getElementById("button").addEventListener("click", function(){
+            alert("Tugma bosildi");
+        });
+        document.getElementById("list").textContent="Yangi element";
+        document.getElementById("container").style.backgroundColor="yellow";
+        document.getElementById("box").style.width="300px";
+        let pa=document.querySelectorAll("p");
+        pa.forEach(p=>{
+            p.style.color="red";
+        });
+        let items=document.querySelectorAll("ul li"); 
+        items.forEach(li=>{
+            li.textContent+=" - done";
+        });
+        document.createElement("button");
+        newButton.textContent="Yangi tugma";
+        newButton.addEventListener("click", function(){
+            console.log("Yangi tugma bosildi!");
+        });
+        document.body.appendChild(newButton);
+        let item=document.querySelectorAll("p"); 
+        items.forEach((p, index)=>{
+        if ((index+1)%2!==0) {
+            p.style.color="green";
+        }
+        });
+        let newDiv=document.createElement("div");
+        newDiv.textContent="Dynamically added div";
+        document.body.appendChild(newDiv);
+        let list=document.getElementById("myList"); 
+        let itemss=Array.from(list.children);
+        list.innerHTML="";
+        items.reverse().forEach(li=>list.appendChild(li));
+        let input=document.getElementById("userInput");
+        let output=document.getElementById("outputText");
+        input.addEventListener("input", function() {
+            output.textContent=input.value;
+        });
+        function addParagraph() {
+            let p=document.createElement("p");
+            p.textContent="Bu yangi paragraf";
+            document.body.appendChild(p);
+        }
+        console.log(document.body.children);
+    </script>
+</body>
+</html>
