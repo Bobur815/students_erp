@@ -44,9 +44,14 @@ function createStudent(req, res){
     studentMethods.createStudent(newdata)
 } 
 function updateStudent(req, res){
-    const id = req.params;
+   try {
+    const {id} = req.params;
     const data = req.body;
-    studentMethods.updateStudent(id,data)
+    let answer = studentMethods.updateStudent(id,data)
+    res.status(202).send(answer)
+   } catch (error) {
+        res.status(400).send(error.message)
+   }
 } 
 function deleteStudent(req, res){
     const id = req.params;

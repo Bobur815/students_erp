@@ -1,73 +1,72 @@
 [
     {
-      "id": 1,
-      "firstName": "Ali",
-      "lastName": "Karimov",
-      "course": 1,
-      "faculty": "Dasturiy injiniring"
+        "id": 1,
+        "firstName": "alibek",
+        "lastName": "Karimov",
+        "course": 1,
+        "faculty": "Dasturiy injiniring"
     },
     {
-      "id": 2,
-      "firstName": "Dilnoza",
-      "lastName": "Toirova",
-      "course": 2,
-      "faculty": "Axborot xavfsizligi"
+        "id": 2,
+        "firstName": "Dilnoza",
+        "lastName": "Toirova",
+        "course": 2,
+        "faculty": "Axborot xavfsizligi"
     },
     {
-      "id": 3,
-      "firstName": "Jamshid",
-      "lastName": "Qodirov",
-      "course": 3,
-      "faculty": "Kiberxavfsizlik"
+        "id": 3,
+        "firstName": "Jamshid",
+        "lastName": "Qodirov",
+        "course": 3,
+        "faculty": "Kiberxavfsizlik"
     },
     {
-      "id": 4,
-      "firstName": "Malika",
-      "lastName": "Rustamova",
-      "course": 4,
-      "faculty": "Sun’iy intellekt"
+        "id": 4,
+        "firstName": "Malika",
+        "lastName": "Rustamova",
+        "course": 4,
+        "faculty": "Sun’iy intellekt"
     },
     {
-      "id": 5,
-      "firstName": "Bekzod",
-      "lastName": "Yusupov",
-      "course": 1,
-      "faculty": "Kompyuter injiniringi"
+        "id": 5,
+        "firstName": "Bekzod",
+        "lastName": "Yusupov",
+        "course": 1,
+        "faculty": "Kompyuter injiniringi"
     },
     {
-      "id": 6,
-      "firstName": "Zilola",
-      "lastName": "Nazarova",
-      "course": 2,
-      "faculty": "Axborot texnologiyalari"
+        "id": 6,
+        "firstName": "Zilola",
+        "lastName": "Nazarova",
+        "course": 2,
+        "faculty": "Axborot texnologiyalari"
     },
     {
-      "id": 7,
-      "firstName": "Shohruh",
-      "lastName": "Abdullayev",
-      "course": 3,
-      "faculty": "Kompyuter grafika"
+        "id": 7,
+        "firstName": "Shohruh",
+        "lastName": "Abdullayev",
+        "course": 3,
+        "faculty": "Kompyuter grafika"
     },
     {
-      "id": 8,
-      "firstName": "Feruza",
-      "lastName": "Islomova",
-      "course": 4,
-      "faculty": "Dasturiy injiniring"
+        "id": 8,
+        "firstName": "Feruza",
+        "lastName": "Islomova",
+        "course": 4,
+        "faculty": "Dasturiy injiniring"
     },
     {
-      "id": 9,
-      "firstName": "Nodir",
-      "lastName": "Rasulov",
-      "course": 2,
-      "faculty": "Axborot xavfsizligi"
+        "id": 9,
+        "firstName": "Nodir",
+        "lastName": "Rasulov",
+        "course": 2,
+        "faculty": "Axborot xavfsizligi"
     },
     {
-      "id": 10,
-      "firstName": "Diyor",
-      "lastName": "Sattorov",
-      "course": 1,
-      "faculty": "Sun’iy intellekt"
+        "id": 10,
+        "firstName": "Diyor",
+        "lastName": "Sattorov",
+        "course": 1,
+        "faculty": "Sun’iy intellekt"
     }
-  ]
-  
+]
