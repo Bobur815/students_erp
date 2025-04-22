@@ -40,7 +40,7 @@ function getStudent(req, res) {
 } 
 function createStudent(req, res){
     const newdata = req.body;
-    studentMethods.createStudent(newdata)
+    res.status(201).json(studentMethods.createStudent(newdata))
 } 
 function updateStudent(req, res){
     const id = req.params;
@@ -49,7 +49,19 @@ function updateStudent(req, res){
 } 
 function deleteStudent(req, res){
     const id = req.params;
-    studentMethods.deleteStudent(id)
+    
+    if(studentMethods.deleteStudent(id)){
+        res.status(202).json({message: "Student successfully deleted"})
+    }
+    else{
+        if(id){
+        res.status(404).json({message: `Student with ID ${id} not found`})
+        }
+        else{
+            res.status(404).json({message: "Invalid ID"})
+        }
+    }
+    
 }
 
 export default {
